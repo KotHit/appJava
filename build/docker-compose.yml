@@ -1,0 +1,17 @@
+version: '3'
+services:
+   run-apache:
+        build: ./apache
+        container_name: tom_httpd_v2
+        links:
+               - run-tomcat
+        expose:
+               - "80"
+               - "8080"
+        ports:
+               - "80:8080"     
+   run-tomcat:
+        build: ./tomcat
+        container_name: tom_tomcat_v2
+
+   
